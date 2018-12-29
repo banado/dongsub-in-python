@@ -1,0 +1,23 @@
+#퀵정렬
+numbers=[40,35,27,75,50]
+def quick_sort(array):
+    if len(array)<2:
+        return array
+    else:
+        pivot=array[0]
+        greater=[number for number in array[1:] if number>=pivot]
+        less=[number for number in array[1:] if number<=pivot]
+        return quick_sort(less) + [pivot] +quick_sort(greater)
+        
+        
+def bubble_sort(numbers):
+    for n in range(0, len(numbers)):
+        for i in range(n,len(numbers)):
+
+            if numbers[n]>numbers[i]:
+                temp=numbers[n]
+                numbers[n]=numbers[i]
+                numbers[i]=temp
+    return numbers       
+numbers=[8,7,3,2,9,4,16,17,12]
+print(bubble_sort(numbers))
